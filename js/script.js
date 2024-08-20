@@ -66,6 +66,10 @@ nextButton.addEventListener('click', function () {
     //incremento dell'indice 
     currentActiveIndex++;
 
+    //mettere la classe active all'immagine successiva
+
+    images[currentActiveIndex].classList.add('active');
+
 
 
 });
@@ -81,6 +85,18 @@ nextButton.addEventListener('click', function () {
 
 prevButton.addEventListener('click', function () {
 
+    //la prima cosa che deve accadere è togliere la classe active all'immagine avente classe active 
+
+    images[currentActiveIndex].classList.remove('active');
+    //incremento l'indice di currnetActiveIndex
+
+    //Decremento dell'indice 
+    currentActiveIndex--;
+
+
+    //mettere la classe active all'immagine precente
+
+    images[currentActiveIndex].classList.add('active');
 
 
 });
