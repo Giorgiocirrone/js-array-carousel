@@ -29,10 +29,46 @@ Buon lavoro e buon divertimento! :faccia_leggermente_sorridente: */
 
 //Preparazione 
 
+//posso prendere anche il sorgente delle immagini 
+
+
+const sources = ['image/img/01.webp', 'image/img/02.webp', 'image/img/03.webp', 'image/img/04.webp', 'image/img/05.webp'];
+
+
+
+
+
+
+
+
+
+
+
+
 // Prendiamo gli elementi che ci interessano  dal DOM 
 
 const prevButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
+// la prendo perchè ci devo iniettare dentro le immagini 
+const carosellogallery = document.querySelector('.gallery');
+
+
+//adesso genero le immagini girando sull vettore 
+
+for (let i = 0; i < sources.length; i++) {
+
+    const src = sources[i];//scorro in questo modo la mia immagine sarà governata da questo indice 
+    const image = document.createElement('img');//ricordti nodo.src
+    image.src = src;
+    image.alt = `landscape-${i + 1}`;
+    carosellogallery.appendChild(image);
+}
+
+
+
+
+
+
 //prendo tutte le immagini con un selettore css e mi prende tutti gli elementi che corrispondono a quel selettore css 
 const images = document.querySelectorAll('#carosello img');
 
@@ -121,6 +157,9 @@ prevButton.addEventListener('click', function () {
 
     //Decremento dell'indice 
     currentActiveIndex--;
+    if (currentActiveIndex < 0) {
+        currentActiveIndex = images.length - 1;
+    }
 
 
     //mettere la classe active all'immagine precente
