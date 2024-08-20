@@ -58,6 +58,14 @@ images[currentActiveIndex].classList.add('active');
 //reagiamo al next 
 
 nextButton.addEventListener('click', function () {
+
+    //blocchiamo se siamo alla fine 
+    //if (currentActiveIndex === images.length - 1) return;
+    //se voglio fare il giro 
+
+
+
+
     //la prima cosa che deve accadere è togliere la classe active all'immagine avente classe active 
 
     images[currentActiveIndex].classList.remove('active');
@@ -66,6 +74,15 @@ nextButton.addEventListener('click', function () {
     //incremento dell'indice 
     currentActiveIndex++;
 
+
+    //controllo indice per fare il giro 
+
+    if (currentActiveIndex === images.length) {
+        //vuole di re che sono fuori 
+        currentActiveIndex = 0;
+
+    }
+
     //mettere la classe active all'immagine successiva
 
     images[currentActiveIndex].classList.add('active');
@@ -73,6 +90,11 @@ nextButton.addEventListener('click', function () {
 
 
 });
+
+
+//tutto deve  ruotare attorno alla variabile indice infatti nel prev viene fatta la stessa operazione ma la contrario 
+
+
 
 
 
@@ -84,6 +106,13 @@ nextButton.addEventListener('click', function () {
 //reagiamo al prev
 
 prevButton.addEventListener('click', function () {
+
+    //blocchiamo se siamo all'inizio 
+
+    // if (!currentActiveIndex) return; //soluzione 1 che blocco 
+
+
+
 
     //la prima cosa che deve accadere è togliere la classe active all'immagine avente classe active 
 
@@ -100,3 +129,16 @@ prevButton.addEventListener('click', function () {
 
 
 });
+
+//current acrtive va dichiatato fuori così lo possono vedere i bottoni
+//così facendo si fa riferimento ad una 'verità soltanto'
+
+
+//inoltre è un informazione centrale
+
+
+//bisogna sistemare il currentindex in modo tale che il suo incremento arrivi fino ad un certo limite
+//una volta che arriva a 5  ritorna indietro, bloccare , oppure levare la freccia appena si arriva alla fine 
+
+
+
