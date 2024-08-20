@@ -22,6 +22,8 @@
     width: 700px;
     margin: 30px auto;
     /* per non averlo appiccicato */
+    position: relative;
+    /*da riferimento senza coordinate*/
 
 }
 
@@ -50,3 +52,27 @@
 
 
 /*se faccio ispeziona chiaramente posso gestirmi la classe active nelle immagini che voglio */
+
+
+#carosello .bi {
+
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /*devo recuperare lo spazio*/
+    cursor: pointer;
+
+}
+
+
+#prev {
+
+    right: 105%;
+    /*spingo di più*/
+}
+
+#next {
+
+    left: 105%;
+}

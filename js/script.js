@@ -27,6 +27,10 @@ Scriviamo sempre prima per punti il nostro algoritmo in italiano per capire cosa
 Buon lavoro e buon divertimento! :faccia_leggermente_sorridente: */
 
 
+//Preparazione 
 
+// Prendiamo gli elementi che ci interessano  dal DOM 
 
+const prevButton = document.getElementById('prev');
+const nextButton = document.getElementById('next');
 
