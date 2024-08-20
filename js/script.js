@@ -33,4 +33,54 @@ Buon lavoro e buon divertimento! :faccia_leggermente_sorridente: */
 
 const prevButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
+//prendo tutte le immagini con un selettore css e mi prende tutti gli elementi che corrispondono a quel selettore css 
+const images = document.querySelectorAll('#carosello img');
 
+// io ho una lista di nodi che pur non essendo un array posso gestirle come tali , ovvero una collection di nodi 
+
+//mi trovo tutto l'elemento infatti 
+
+/* cosa fighissima se fai console.log ti spunta node liste spaziale che  figo  */
+
+
+//rendiamo visibile la prima immagine 
+//images[0].classList.add('active');
+
+//bisogna far gestire tutto in funzione dell'indice dento image 
+
+
+let currentActiveIndex = 0; //let perchè deve cambiare 
+
+images[currentActiveIndex].classList.add('active');
+
+//eventi dinamici 
+
+//reagiamo al next 
+
+nextButton.addEventListener('click', function () {
+    //la prima cosa che deve accadere è togliere la classe active all'immagine avente classe active 
+
+    images[currentActiveIndex].classList.remove('active');
+    //incremento l'indice di currnetActiveIndex
+
+    //incremento dell'indice 
+    currentActiveIndex++;
+
+
+
+});
+
+
+
+
+
+
+
+
+//reagiamo al prev
+
+prevButton.addEventListener('click', function () {
+
+
+
+});
