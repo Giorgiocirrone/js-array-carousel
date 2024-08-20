@@ -1,0 +1,52 @@
+/*Css reset */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/*Carosello*/
+
+#carosello {
+
+    height: 400px;
+    width: 700px;
+    margin: 30px auto;
+    /* per non averlo appiccicato */
+
+}
+
+
+#carosello .gallery {
+
+    height: 100%;
+}
+
+/*carosello a scorrimento*/
+#carosello img {
+
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    /*stondatura dei bordi*/
+
+    display: none;
+    /*facciamo scomparire tutto meno uno*/
+}
+
+#carosello img.active {
+
+    display: block;
+}
+
+
+/*se faccio ispeziona chiaramente posso gestirmi la classe active nelle immagini che voglio */
