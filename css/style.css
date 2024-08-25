@@ -9,8 +9,10 @@
 
 
 .container {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
+
+
 }
 
 
@@ -24,6 +26,9 @@
     /* per non averlo appiccicato */
     position: relative;
     /*da riferimento senza coordinate*/
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
 
 }
 
@@ -43,6 +48,7 @@
 
     display: none;
     /*facciamo scomparire tutto meno uno*/
+
 }
 
 #carosello img.active {
@@ -75,4 +81,39 @@
 #next {
 
     left: 105%;
+}
+
+
+
+
+/*Miniature*/
+
+
+#thumdnails {
+
+    width: 700px;
+    margin: 0 auto;
+    height: 100px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+
+}
+
+#thumdnails img {
+
+    height: 100%;
+    width: 19%;
+    /*dare un pò di gioco allo space bettween*/
+    border-radius: 10px;
+    filter: grayscale(1);
+}
+
+#thumdnails img.active {
+
+    filter: grayscale(0);
+
 }

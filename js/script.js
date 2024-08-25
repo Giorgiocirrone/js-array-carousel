@@ -45,16 +45,18 @@ const sources = ['image/img/01.webp', 'image/img/02.webp', 'image/img/03.webp', 
 
 
 
+
 // Prendiamo gli elementi che ci interessano  dal DOM 
 
 const prevButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
 // la prendo perchè ci devo iniettare dentro le immagini 
 const carosellogallery = document.querySelector('.gallery');
+const thumbgallery = document.getElementById('thumdnails');
 
 
 //adesso genero le immagini girando sull vettore 
-
+/*
 for (let i = 0; i < sources.length; i++) {
 
     const src = sources[i];//scorro in questo modo la mia immagine sarà governata da questo indice 
@@ -64,13 +66,30 @@ for (let i = 0; i < sources.length; i++) {
     carosellogallery.appendChild(image);
 }
 
+*/
 
+//template literal 
+
+//variabile di appoggio 
+let imgs = '';
+for (let i = 0; i < sources.length; i++) {
+    imgs += `<img alt = "landscape-${i + 1}" src = "${sources[i]}">`
+    //in italiano si dice src prendi l'elemento corrente dell'array sorgente
+
+
+}
+//metto tutto in pagina 
+
+carosellogallery.innerHTML = imgs;
+thumbgallery.innerHTML = imgs;
 
 
 
 
 //prendo tutte le immagini con un selettore css e mi prende tutti gli elementi che corrispondono a quel selettore css 
+//vale anche per le miniature 
 const images = document.querySelectorAll('#carosello img');
+const thumbs = document.querySelectorAll('#thumdnails img');
 
 // io ho una lista di nodi che pur non essendo un array posso gestirle come tali , ovvero una collection di nodi 
 
@@ -88,6 +107,7 @@ const images = document.querySelectorAll('#carosello img');
 let currentActiveIndex = 0; //let perchè deve cambiare 
 
 images[currentActiveIndex].classList.add('active');
+thumbs[currentActiveIndex].classList.add('active');
 
 //eventi dinamici 
 
@@ -105,6 +125,7 @@ nextButton.addEventListener('click', function () {
     //la prima cosa che deve accadere è togliere la classe active all'immagine avente classe active 
 
     images[currentActiveIndex].classList.remove('active');
+    thumbs[currentActiveIndex].classList.remove('active');
     //incremento l'indice di currnetActiveIndex
 
     //incremento dell'indice 
@@ -122,6 +143,7 @@ nextButton.addEventListener('click', function () {
     //mettere la classe active all'immagine successiva
 
     images[currentActiveIndex].classList.add('active');
+    thumbs[currentActiveIndex].classList.add('active');
 
 
 
@@ -153,6 +175,7 @@ prevButton.addEventListener('click', function () {
     //la prima cosa che deve accadere è togliere la classe active all'immagine avente classe active 
 
     images[currentActiveIndex].classList.remove('active');
+    thumbs[currentActiveIndex].classList.remove('active');
     //incremento l'indice di currnetActiveIndex
 
     //Decremento dell'indice 
@@ -165,6 +188,7 @@ prevButton.addEventListener('click', function () {
     //mettere la classe active all'immagine precente
 
     images[currentActiveIndex].classList.add('active');
+    thumbs[currentActiveIndex].classList.add('active');
 
 
 });
@@ -177,7 +201,20 @@ prevButton.addEventListener('click', function () {
 
 
 //bisogna sistemare il currentindex in modo tale che il suo incremento arrivi fino ad un certo limite
-//una volta che arriva a 5  ritorna indietro, bloccare , oppure levare la freccia appena si arriva alla fine 
+//una volta che arriva a 5  ritorna indietro, bloccare , oppure levare la freccia appena si arriva alla fine
 
 
 
+//miniature impostazione sono delle riproduzioni delle immagini in miniatura
+
+
+
+//facciamo funzionare tutto con js per via della classe active 
+
+/*
+
+facciamo generare tutto js=> hai generato delle immagini con lo stesso landscape
+
+
+
+*/
