@@ -39,13 +39,6 @@ const sources = ['image/img/01.webp', 'image/img/02.webp', 'image/img/03.webp', 
 
 
 
-
-
-
-
-
-
-
 // Prendiamo gli elementi che ci interessano  dal DOM 
 
 const prevButton = document.getElementById('prev');
@@ -209,7 +202,7 @@ prevButton.addEventListener('click', function () {
 
 
 
-//facciamo funzionare tutto con js per via della classe active 
+//facciamo funzionare tutto con js per via della classe active
 
 /*
 
@@ -218,3 +211,41 @@ facciamo generare tutto js=> hai generato delle immagini con lo stesso landscape
 
 
 */
+
+
+//feedback visivo 
+
+
+//devono reagire al click adesso abbiamo più bottoni generati dinamicamente 
+//sono in una lista di nodi 
+//prendo ciascuno di loro e gli metto un evento listener 
+
+
+
+
+//evento dinamico aggiunto 
+
+for (let i = 0; i < thumbs.length; i++) {
+
+    //quando sono un array giro per tutti gli elementi
+    const thumbnail = thumbs[i]; //prendo elemento di volta in volta in una costane per semplicità
+    thumbnail.addEventListener('click', function () {
+        //cosa faccio al click 
+        images[currentActiveIndex].classList.remove('active');
+        thumbs[currentActiveIndex].classList.remove('active');
+
+
+
+        //setto l'indice currentaActive 
+
+
+        currentActiveIndex = i;
+
+        //devono diventare attive qualle con il relativo indice 
+        images[currentActiveIndex].classList.add('active');
+        thumbs[currentActiveIndex].classList.add('active');
+
+
+
+    })
+};

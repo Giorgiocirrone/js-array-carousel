@@ -110,10 +110,28 @@
     /*dare un pò di gioco allo space bettween*/
     border-radius: 10px;
     filter: grayscale(1);
+
+    cursor: pointer;
+    /*effetto visivo*/
+    transition: transform 0.5s;
+    /*dice al css che quando c'è un cambaimento nelle proprietà deve essere modificata in un tempo */
+}
+
+
+#thumdnails img.hover {
+
+    transform: translateY(-10px);
+    filter: grayscale(0.5);
+
+    box-shadow: 0 0 10px goldenrod;
+
+
+
 }
 
 #thumdnails img.active {
 
     filter: grayscale(0);
+    box-shadow: 0 0 10px dodgerblue;
 
 }
